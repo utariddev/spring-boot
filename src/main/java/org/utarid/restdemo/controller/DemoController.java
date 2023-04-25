@@ -1,6 +1,9 @@
-package org.utarid.restdemo;
+package org.utarid.restdemo.controller;
 
 import org.springframework.web.bind.annotation.*;
+import org.utarid.restdemo.User;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/demo")

@@ -1,9 +1,7 @@
 package org.utarid.restdemo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.utarid.restdemo.User;
+import org.springframework.web.bind.annotation.*;
+import org.utarid.restdemo.repository.UserEntity;
 import org.utarid.restdemo.service.UserService;
 
 import java.util.List;
@@ -19,7 +17,12 @@ public class UserController {
     }
 
     @GetMapping("/get")
-    public List<User> getAllUsers() {
+    public List<UserEntity> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @PostMapping("/create")
+    public void createUser(@RequestBody UserEntity user) {
+        userService.createUser(user);
     }
 }

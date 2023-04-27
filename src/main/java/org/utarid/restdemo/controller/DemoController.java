@@ -3,8 +3,6 @@ package org.utarid.restdemo.controller;
 import org.springframework.web.bind.annotation.*;
 import org.utarid.restdemo.User;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/demo")
 public class DemoController {
@@ -24,8 +22,8 @@ public class DemoController {
         return "testGet : " + name;
     }
 
-    @PostMapping("/test/{name}")
-    public String testPostParameter(@PathVariable String name) {
-        return "testPost : " + name;
+    @PostMapping("/testbody")
+    public String testPostParameter(@RequestBody User user) {
+        return "testPost : " + user.name();
     }
 }

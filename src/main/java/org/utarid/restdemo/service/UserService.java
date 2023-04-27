@@ -1,14 +1,25 @@
 package org.utarid.restdemo.service;
 
 import org.springframework.stereotype.Service;
-import org.utarid.restdemo.User;
+import org.utarid.restdemo.repository.UserEntity;
+import org.utarid.restdemo.repository.UserRepository;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class UserService {
-    public List<User> getAllUsers() {
-        return Arrays.asList(new User("Mehmet", 30), new User("Ali", 40));
+
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public void createUser(UserEntity userEntity) {
+        userRepository.save(userEntity);
+    }
+
+    public List<UserEntity> getAllUsers() {
+        return userRepository.findAll();
     }
 }

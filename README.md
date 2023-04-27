@@ -1,0 +1,1 @@
+This is a Spring Boot application consisting of Entity, Repository, and Service layers. PostgreSQL has been used as the database. You can use the sample controller methods to read and write data to the database. This provides an example of how to use Spring Boot and PostgreSQL.

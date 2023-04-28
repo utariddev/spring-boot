@@ -1,5 +1,6 @@
 package org.utarid.restdemo.controller;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import org.utarid.restdemo.UserDTO;
 import org.utarid.restdemo.service.IUserService;
@@ -12,7 +13,7 @@ public class UserController {
 
     private final IUserService userService;
 
-    public UserController(IUserService userService) {
+    public UserController(@Qualifier("adminUserService") IUserService userService) {
         this.userService = userService;
     }
 

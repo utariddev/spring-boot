@@ -15,6 +15,9 @@ public class UserEntity {
     @Column(nullable = false, length = 64)
     private int age;
 
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private boolean isAdmin;
+
     public Long getId() {
         return id;
     }
@@ -37,5 +40,13 @@ public class UserEntity {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

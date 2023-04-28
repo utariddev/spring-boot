@@ -2,7 +2,7 @@ package org.utarid.restdemo.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.utarid.restdemo.UserDTO;
-import org.utarid.restdemo.service.UserService;
+import org.utarid.restdemo.service.IUserService;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    private final UserService userService;
+    private final IUserService userService;
 
-    public UserController(UserService userService) {
+    public UserController(IUserService userService) {
         this.userService = userService;
     }
 

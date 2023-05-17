@@ -22,6 +22,11 @@ public class DemoController {
         return "testGet : " + name;
     }
 
+    @GetMapping("/testRequestParam")
+    public String testGetRequestParam(@RequestParam("name") String name) {
+        return "testGet : " + name;
+    }
+
     @PostMapping("/testbody")
     public String testPostParameter(@RequestBody User user) {
         return "testPost : " + user.name();
